@@ -29,4 +29,4 @@ This code makes use of an atari wrapper code that can be found [here](https://gi
 Priortized experience replay version of this code will be uploaded shortly!
 
 
-If you have any questions or comments, don't hesitate to send me an email! Contact info can be found [here](marcbrittain.github.io)
+If you have any questions or comments, don't hesitate to send me an email! Contact info can be found [here](https://marcbrittain.github.io)
