@@ -12,6 +12,8 @@ Just added (09/01/2018) is a Deep Double Q-learning implementation applied to th
 * gym
 * numpy
 * opencv
+* random
+* collections
 
 
 ## Getting Started
