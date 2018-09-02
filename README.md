@@ -24,7 +24,7 @@ Running this code is very simple. Make sure that you have the above requirements
 python ddqn_breakout.py
 ```
 
-This code makes use of an atari wrapper code that can be found [here](github.com/openai/baselines/blob/master/baselines/common/atari_wrappers.py)
+This code makes use of an atari wrapper code that can be found [here](https://github.com/openai/baselines/blob/master/baselines/common/atari_wrappers.py)
 
 Priortized experience replay version of this code will be uploaded shortly!
 
