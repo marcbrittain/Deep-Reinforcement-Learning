@@ -253,5 +253,5 @@ EPSILON_START = 1.0
 video_width = 84
 video_height = 84
 stack_images = 4
-agent = Agent(env.observation_space.shape,env.action_space.n)
+agent = DDQN_Agent(env.observation_space.shape,env.action_space.n)
 agent.run_experient(EPISODES)
