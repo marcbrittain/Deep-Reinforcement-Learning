@@ -2,7 +2,7 @@
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
 
-Just added (09/01/2018) is a Deep Double Q-learning implementation applied to the Atari game: breakout! 
+Just added (09/01/2018) is a Deep Double Q-learning (ddqn) implementation applied to the Atari game: breakout! 
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Just added (09/01/2018) is a Deep Double Q-learning implementation applied to th
 Running this code is very simple. Make sure that you have the above requirements taken care of, then download the two python files. In the command line, or any python editor change directory to where these two files are located and type:
 
 ```python
-python ddqn_breakout.py
+python ddqn.py
 ```
 
 This code makes use of an atari wrapper code that can be found [here](https://github.com/openai/baselines/blob/master/baselines/common/atari_wrappers.py)
