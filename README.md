@@ -36,9 +36,16 @@ This code makes use of an atari wrapper code that can be found [here](https://gi
 
 Priortized experience replay version of this code will be uploaded shortly!
 
-Recent Modifications:
+**Recent Additions**:
 * (09/04/2018) added DDQN for breakout
 * (09/01/2018) added DQN for breakout
 
 
 If you have any questions or comments, don't hesitate to send me an email! I am looking for ways to make this code even more computationally efficient. Contact info can be found [here](https://marcbrittain.github.io)
+
+
+---
+#### Support
+If this helped you reduce time to develop, or if you found this work interesting feel free to send me a cup of coffee :)
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/MarcBrittain)
