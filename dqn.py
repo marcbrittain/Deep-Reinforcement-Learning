@@ -12,7 +12,7 @@ from keras import backend as K
 from atari_wrapper import make_wrap_atari
 
 
-### creating the DDN Convolutional neural network for breakout
+### creating the DQN Convolutional neural network for breakout
 
 
 ################################
