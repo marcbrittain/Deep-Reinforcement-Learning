@@ -12,7 +12,7 @@ Just added (09/04/2018) is a Double Deep Q-learning (dqn) implementation applied
 * gym
 * gym['atari']
 * numpy
-* opencv
+* OpenCV
 * random
 * collections
 
