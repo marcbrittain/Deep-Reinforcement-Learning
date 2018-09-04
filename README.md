@@ -41,4 +41,4 @@ Recent Modifications:
 * (09/01/2018) added DQN for breakout
 
 
-If you have any questions or comments, don't hesitate to send me an email! Contact info can be found [here](https://marcbrittain.github.io)
+If you have any questions or comments, don't hesitate to send me an email! I am looking for ways to make this code even more computationally efficient. Contact info can be found [here](https://marcbrittain.github.io)
