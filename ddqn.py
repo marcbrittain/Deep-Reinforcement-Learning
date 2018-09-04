@@ -12,7 +12,7 @@ from keras import backend as K
 from atari_wrapper import make_wrap_atari
 
 
-### creating the DDQN Convolutional neural network for breakout
+### creating the DDN Convolutional neural network for breakout
 
 
 ################################
@@ -24,7 +24,7 @@ from atari_wrapper import make_wrap_atari
 
 
 # initalize the DDQN agent
-class DDQN_Agent:
+class DQN_Agent:
     def __init__(self,state_size,action_size):
 
         self.memory = deque(maxlen=500000)
@@ -253,5 +253,5 @@ EPSILON_START = 1.0
 video_width = 84
 video_height = 84
 stack_images = 4
-agent = DDQN_Agent(env.observation_space.shape,env.action_space.n)
+agent = DQN_Agent(env.observation_space.shape,env.action_space.n)
 agent.run_experient(EPISODES)
