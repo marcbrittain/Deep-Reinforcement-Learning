@@ -41,8 +41,8 @@ class DDQN_Agent:
         self.model_check = []
 
         self.learning_rate = 0.0001      #optimizer leanring rate
-        self.model = self._build_model()
-        self.target_model = self._build_model()
+        self.model = self.build_model()
+        self.target_model = self.build_model()
         self.update_target_model()
         
         self.TRAIN_START = 5000  # how many samples to populate the replay memory with
@@ -51,7 +51,7 @@ class DDQN_Agent:
         self.count = 0
 
 
-    def _build_model(self):
+    def build_model(self):
 
        
         # Consturct model
