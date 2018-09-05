@@ -108,7 +108,7 @@ class DDQN_Agent:
         # Now we can update all of the target values at once using numpy...
         # I think this should really help with batch scaling
         
-        target[:,best_actions] += reward + (1-done)*self.gamma*target_q_values[:,best_actions]
+        target[:,best_actions] = reward + (1-done)*self.gamma*target_q_values[:,best_actions]
         
         # train the model with our states and targets
         self.model.train_on_batch(state,target)
