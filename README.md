@@ -45,6 +45,7 @@ This code makes use of an atari wrapper code that can be found [here](https://gi
 Priortized experience replay version of this code will be uploaded shortly!
 
 **Recent Additions**:
+* (09/06/2018) added parsing support for DQN and DDQN
 * (09/04/2018) added DDQN for breakout
 * (09/01/2018) added DQN for breakout
 
