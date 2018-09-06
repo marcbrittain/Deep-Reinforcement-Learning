@@ -27,7 +27,7 @@ or for DDQN:
 
 `python ddqn.py --train_ddqn`
 
-If you can also specify rendering of the atari environment by typing:
+If you can also render the atari environment by typing:
 
 `python ddqn.py --train_ddqn --render`
 
