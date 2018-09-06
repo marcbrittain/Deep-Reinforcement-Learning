@@ -2,7 +2,7 @@
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
 
-Just added (09/04/2018) is a Double Deep Q-learning (dqn) implementation applied to the Atari game: breakout! 
+Just added (09/04/2018) is a Double Deep Q-learning (DDQN) implementation applied to the Atari game: breakout! 
 
 ## Requirements
 
