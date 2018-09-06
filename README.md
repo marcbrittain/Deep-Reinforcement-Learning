@@ -25,27 +25,19 @@ Running this code is very simple. Make sure that you have the above requirements
 
 or for DDQN:
 
-```python
-python ddqn.py --train_ddqn
-```
+`python ddqn.py --train_ddqn`
 
 If you can also specify rendering of the atari environment by typing:
 
-```python
-python ddqn.py --train_ddqn --render
-```
+`python ddqn.py --train_ddqn --render`
 
 To specify a certain number of episodes (example: 10) to run (50,000 default) use:
 
-```python
-python ddqn.py --train_ddqn --episodes 10
-```
+`python ddqn.py --train_ddqn --episodes 10`
 
 Finally to test the final model after training, you can pass the test_dqn (or test_ddqn) flag:
 
-```python
-python ddqn.py --test_ddqn --render --episodes 10
-```
+`python ddqn.py --test_ddqn --render --episodes 10`
 
 
 This code makes use of an atari wrapper code that can be found [here](https://github.com/openai/baselines/blob/master/baselines/common/atari_wrappers.py)
