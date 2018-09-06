@@ -21,9 +21,7 @@ Just added (09/04/2018) is a Double Deep Q-learning (dqn) implementation applied
 
 Running this code is very simple. Make sure that you have the above requirements taken care of, then download the two python files. In the command line, or any python editor change directory to where these two files are located and type:
 
-```python
-python dqn.py --train_dqn
-```
+`python dqn.py --train_dqn`
 
 or for DDQN:
 
