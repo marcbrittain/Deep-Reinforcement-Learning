@@ -13,7 +13,7 @@ from atari_wrapper import make_wrap_atari
 import argparse
 
 
-### creating the DDQN Convolutional neural network for breakout
+### creating the DQN Convolutional neural network for breakout
 
 
 ################################
@@ -191,7 +191,7 @@ class DQN_Agent:
                 self.model_check.append(total_reward)
                 n_avg = np.mean(self.model_check[-100:])
 
-                if n_avg > p_avg and not args.test_dqn:
+                if n_avg > p_avg and args.train_dqn:
                     self.model.save_weights("dqn_weights.h5")
 
 
