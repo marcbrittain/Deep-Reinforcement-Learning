@@ -10,7 +10,6 @@ from keras.layers import Dense,Convolution2D,Flatten,Activation,LeakyReLU
 from keras.optimizers import Adam
 from keras import backend as K
 from atari_wrapper import make_wrap_atari
-import argparse
 
 
 ### creating the DDQN Convolutional neural network for breakout
@@ -25,7 +24,7 @@ import argparse
 
 
 # initalize the DDQN agent
-class DQN_Agent:
+class DDQN_Agent:
     def __init__(self,state_size,action_size):
 
         self.memory = deque(maxlen=500000)
@@ -33,11 +32,11 @@ class DQN_Agent:
         self.action_size = action_size
         self.gamma = 0.99    # discount rate
         self.epsilon = 1.0   # initial epsilon value
-    
-        
+
+
         # flag is for running an episode with epsilon = 1e-10
         self.flag = False
-        
+
         # saving our values from the flag episode
         self.model_check = []
 
@@ -45,16 +44,16 @@ class DQN_Agent:
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.update_target_model()
-        
+
         self.TRAIN_START = 5000  # how many samples to populate the replay memory with
-        self.UPDATE_FREQ = 5000  # how often to update the target network
+        self.UPDATE_FREQ = 1000  # how often to update the target network
 
         self.count = 0
 
 
     def _build_model(self):
 
-       
+
         # Consturct model
         model = Sequential()
         model.add(Convolution2D(32, (8, 8),input_shape=(video_width, video_height,stack_images), strides=(4, 4),activation='relu',padding='same'))
@@ -78,29 +77,26 @@ class DQN_Agent:
 
 
     def replay(self, batch_size):
-        
+
         """Grab samples from batch to train the network"""
-       
-        # initialize states and targets
-        states = np.zeros((batch_size,84,84,4))
-        targets = np.zeros((batch_size,4))
-        
+
         # grab the samples from memory
         minibatch = random.sample(self.memory, batch_size)
-        
-        for i,(state,action,reward,next_state,done) in enumerate(minibatch):
+        for state,action,reward,next_state,done in minibatch:
             target = self.model.predict(state)
+
+
             if done:
                 target[0][action] = reward
             else:
+                # This is the heart of ddqn, we need to get the best actions
+                # from the online model
+                best_action = np.argmax(self.model.predict(next_state)[0])
                 t = self.target_model.predict(next_state)[0]
-                target[0][action] = float(reward) + self.gamma * np.amax(t)
-            
-            targets[i,:] = target[0]
-            states[i,:,:,:] = state
-            
-        # train the model with our states and targets
-        self.model.fit(states, targets, epochs=1, verbose=0)
+                target[0][action] = reward + self.gamma * t[best_action]
+
+            self.model.fit(state, target, epochs=1, verbose=0)
+
 
 
     def load(self, name):
@@ -116,7 +112,7 @@ class DQN_Agent:
 
         # simple epsilon-greedy strategy for the agent
         if random.random() <= self.epsilon:
-            
+
             a = random.randrange(self.action_size)
 
         else:
@@ -191,8 +187,8 @@ class DQN_Agent:
                 self.model_check.append(total_reward)
                 n_avg = np.mean(self.model_check[-100:])
 
-                if n_avg > p_avg and not args.test_dqn:
-                    self.model.save_weights("dqn_weights.h5")
+                if n_avg > p_avg and args.train_ddqn:
+                    self.model.save_weights("ddqn_weights.h5")
 
 
             else:
@@ -202,12 +198,12 @@ class DQN_Agent:
 
   
     def run_experient(self,args):
-        """run experiment for the DQN agent on breakout"""
+        """run experiment for the DDQN agent on breakout"""
         
         
         
-        if args.test_dqn:
-            agent.load('dqn_weights.h5')
+        if args.test_ddqn:
+            agent.load('ddqn_weights.h5')
             agent.update_target_model()
             agent.epsilon=1e-10
             self.flag = True
@@ -268,14 +264,16 @@ class DQN_Agent:
 ### parsing the input from the command line
 #######################################################################################################
 parser = argparse.ArgumentParser(description="DQN Breakout")
-parser.add_argument('--train_dqn', action='store_true', help='whether train DQN')
-parser.add_argument('--test_dqn', action='store_true', help='whether test DQN')
+parser.add_argument('--train_ddqn', action='store_true', help='whether train DQN')
+parser.add_argument('--test_ddqn', action='store_true', help='whether test DQN')
 parser.add_argument('--render', action='store_true', help='whether render environment or not')
 parser.add_argument('--episodes', type=int, default = 50000, help='Number of episodes to run')
 args = parser.parse_args()
 #######################################################################################################
 
-              
+
+
+
 
 ### I know globals are bad, but I think I can get away with a few!
 env = make_wrap_atari('BreakoutNoFrameskip-v4')
@@ -285,5 +283,6 @@ EPSILON_START = 1.0
 video_width = 84
 video_height = 84
 stack_images = 4
-agent = DQN_Agent(env.observation_space.shape,env.action_space.n)
+agent = DDQN_Agent(env.observation_space.shape,env.action_space.n)
+agent.epsilon = 1.0
 agent.run_experient(args)
