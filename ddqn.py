@@ -246,7 +246,7 @@ class DDQN_Agent:
 
 ### I know globals are bad, but I think I can get away with a few!
 env = make_wrap_atari('BreakoutNoFrameskip-v4')
-EPISODES = 20000
+EPISODES = 50000
 batch_size = 32
 model_check = 10
 EPSILON_START = 1.0
