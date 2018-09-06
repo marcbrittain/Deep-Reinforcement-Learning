@@ -22,13 +22,31 @@ Just added (09/04/2018) is a Double Deep Q-learning (dqn) implementation applied
 Running this code is very simple. Make sure that you have the above requirements taken care of, then download the two python files. In the command line, or any python editor change directory to where these two files are located and type:
 
 ```python
-python dqn.py
+python dqn.py --train_dqn
 ```
 
 or for DDQN:
 
 ```python
-python ddqn.py
+python ddqn.py --train_ddqn
+```
+
+If you can also specify rendering of the atari environment by typing:
+
+```python
+python ddqn.py --train_ddqn --render
+```
+
+To specify a certain number of episodes (example: 10) to run (50,000 default) use:
+
+```python
+python ddqn.py --train_ddqn --episodes 10
+```
+
+Finally to test the final model after training, you can pass the test_dqn (or test_ddqn) flag:
+
+```python
+python ddqn.py --test_ddqn --render --episodes 10
 ```
 
 
