@@ -2,7 +2,7 @@
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
 
-Just added (09/04/2018) is a Double Deep Q-learning (DDQN) implementation applied to the Atari game: breakout! 
+Just added (09/06/2018) is a Double Deep Q-learning (DDQN) implementation with Prioritized Experience Replay applied to the Atari game: breakout! 
 
 ## Requirements
 
@@ -45,6 +45,7 @@ This code makes use of an atari wrapper code that can be found [here](https://gi
 Priortized experience replay version of this code will be uploaded shortly!
 
 **Recent Additions**:
+* (09/06/2018) added DDQN with PER
 * (09/06/2018) added parsing support for DQN and DDQN
 * (09/04/2018) added DDQN for breakout
 * (09/01/2018) added DQN for breakout
