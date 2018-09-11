@@ -25,6 +25,15 @@ import argparse
 
 
 
+############################################################
+
+# Original Code for Class: SumTree and ReplayMemory can be
+# found here: https://github.com/jaara/AI-blog
+
+############################################################
+
+
+
 class SumTree:
     write = 0
 
