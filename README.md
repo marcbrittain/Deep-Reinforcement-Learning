@@ -4,7 +4,7 @@
 
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
-**NOTE:** It was discovered that the prioritized code is missing the bias weights when training the network. This element is missing on most of the online examples. I have finished the code and will upload the code shortly.
+**NOTE:** It was discovered that the prioritized code is missing the bias weights when training the network. This element is missing on most of the online examples. I have finished the code and will upload the code shortly!
 
 
 Just added (09/07/2018) is a Double Deep Q-learning (DDQN) implementation with Prioritized Experience Replay applied to the Atari game: breakout! This version includes a vectorized implementation of replay training which helps reduce the time of each episode. It should also help with scaling to larger batch sizes since there is no for-loop in training.
