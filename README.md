@@ -1,4 +1,4 @@
-# Deep-Reinforcement-Learning
+# Deep Reinforcement Learning
 
 *DQN*, *DDQN*, *Prioritized Experience Replay*, *Atari*, *keras*, *tensorflow*
 
