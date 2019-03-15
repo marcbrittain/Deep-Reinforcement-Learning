@@ -1,6 +1,6 @@
 # Deep Reinforcement Learning
 
-*DQN*, *DDQN*, *Prioritized Experience Replay*, *Atari*, *keras*, *tensorflow*, *gym
+*DQN*, *Double DQN*, *Dueling DQN*, *Prioritized Experience Replay*, *Atari*, *keras*, *tensorflow*, *gym*
 
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
