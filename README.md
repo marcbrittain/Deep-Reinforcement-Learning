@@ -5,7 +5,7 @@
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
 
 
-Just added (09/07/2018) is a Double Deep Q-learning (DDQN) implementation with Prioritized Experience Replay applied to the Atari game: breakout! This version includes a vectorized implementation of replay training which helps reduce the time of each episode. It should also help with scaling to larger batch sizes since there is no for-loop in training.
+Just added (03/15/2019) is a general version of DQN with Double DQN and Dueling DQN compatibility. This version is located in the gym directory.
 
 ## Requirements
 
