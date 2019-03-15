@@ -1,10 +1,8 @@
 # Deep Reinforcement Learning
 
-*DQN*, *DDQN*, *Prioritized Experience Replay*, *Atari*, *keras*, *tensorflow*
+*DQN*, *DDQN*, *Prioritized Experience Replay*, *Atari*, *keras*, *tensorflow*, *gym
 
 Various Deep Reinforcement Learning techniques applied to different environments. Will be updated with new algorithms and environments often!
-
-**NOTE:** It was discovered that the prioritized code is missing the bias weights when training the network. This element is missing on most of the online examples. I have finished the code and will upload the code shortly!
 
 
 Just added (09/07/2018) is a Double Deep Q-learning (DDQN) implementation with Prioritized Experience Replay applied to the Atari game: breakout! This version includes a vectorized implementation of replay training which helps reduce the time of each episode. It should also help with scaling to larger batch sizes since there is no for-loop in training.
@@ -24,7 +22,7 @@ Just added (09/07/2018) is a Double Deep Q-learning (DDQN) implementation with P
 
 ## Getting Started
 
-Running this code is very simple. Make sure that you have the above requirements taken care of, then download the two python files. In the command line, or any python editor change directory to where these two files are located and type:
+Running this code is very simple. Make sure that you have the above requirements taken care of, then download the two python files. In the command line, or any python editor change directory to either gym or Atari folder where the python files are located and type:
 
 `python dqn.py --train_dqn`
 
@@ -50,10 +48,7 @@ This code makes use of an atari wrapper code that can be found [here](https://gi
 Priortized experience replay version of this code will be uploaded shortly!
 
 **Recent Additions**:
-* (09/07/2018) added DDQN with PER
-* (09/06/2018) added parsing support for DQN and DDQN
-* (09/04/2018) added DDQN for breakout
-* (09/01/2018) added DQN for breakout
+* (03/15/2019): DQN for gym environments with Double and Dueling DQN
 
 
 If you have any questions or comments, don't hesitate to send me an email! I am looking for ways to make this code even more computationally efficient. Contact info can be found [here](https://marcbrittain.github.io)
