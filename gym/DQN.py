@@ -5,7 +5,7 @@ import random
 import time
 from collections import deque
 from sklearn.preprocessing import normalize,MinMaxScaler
-from numba import njit
+
 
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
@@ -15,9 +15,13 @@ sess = tf.Session(config=config)
 set_session(sess)
 
 
+### Created by      Marc Brittain
+###            marcbrittain.github.io
+###               mwb@iastate.edu
+
+
 
 class Agent:
-    """agent uses ddqn with special sampling method"""
     def __init__(self,state_size,action_size,num_episodes,env):
 
         self.state_size = state_size
